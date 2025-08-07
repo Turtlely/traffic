@@ -11,4 +11,4 @@ Additionally, a velocity plot is shown too.
 
 These are calculated using a moving average with a window size of twice the following distance.
 
-![traffic simulation gif](https://github.com/Turtlely/traffic/blob/ad2969311a98010e88876234305654b1988f6295/traffic_simulation.gif)
+![traffic simulation gif](traffic_simulation.gif)
