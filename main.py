@@ -67,16 +67,22 @@ x_vals = np.linspace(0, w, 500)
 car_y_level = -0.05
 fig, axs = plt.subplots(2, 1, figsize=(12, 7), sharex=True, gridspec_kw={'height_ratios': [1.5, 1]})
 fig.suptitle(f"Traffic Simulation | Speed Limit: {sl:.1f}", fontsize=14, fontweight='bold')
+
+# Top subplot (Density)
 scat = axs[0].scatter(X, np.full_like(X, car_y_level), s=25, color='green', label='Cars')
 stoplight_line = axs[0].axvline(stoplight_x, color='green', linestyle='--', linewidth=2, alpha=0.6)
 density_line, = axs[0].plot([], [], 'red', label='Density')
 jam_fill = axs[0].fill_between(x_vals, 0, 0)
 axs[0].set_ylim(car_y_level - 0.05, 2)
 axs[0].set_xlim(0, w)
+axs[0].set_ylabel("Density")         # <-- Label added
 axs[0].legend(loc="upper right")
 
+# Bottom subplot (Velocity)
 velocity_line, = axs[1].plot([], [], 'blue', label='Velocity')
 axs[1].set_ylim(0, sl + 1)
+axs[1].set_ylabel("Velocity")        # <-- Label added
+axs[1].set_xlabel("Position")        # <-- Common x-axis label
 axs[1].legend(loc="upper right")
 
 t = 0
